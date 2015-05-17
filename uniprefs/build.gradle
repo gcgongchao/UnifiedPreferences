@@ -203,18 +203,36 @@ android {
 
   /* Adjust library output naming */
   libraryVariants.all { variant ->
+    // if NO FLAVORs than exclude it part from final output name
+    def flavor = (variant.productFlavors.size() == 0) ? "" :
+        "-" + variant.productFlavors[0].name
+
     variant.outputs.each { output ->
       def outputFile = output.outputFile
+      def name = variant.buildType.name
+      def fileName = "${LIBRARY_ARTIFACT}-${version}${flavor}-${name}.aar"
+      def jarOutput = "${LIBRARY_ARTIFACT}-${version}${flavor}-${name}.jar"
 
+      // modify output file name
       if (outputFile != null && outputFile.name.endsWith('.aar')) {
-        def name = variant.buildType.name
-        def fileName = "${LIBRARY_ARTIFACT}-${version}-${name}.aar"
         output.outputFile = new File(outputFile.parent, fileName)
 
         // dump into logs final filename
         def log = "  output: '${fileName}'"
         rootProject.logger.lifecycle(log)
       }
+
+      // Create task that will also pack library into a Jar
+      def task = project.tasks.create "jar${variant.name.capitalize()}", Jar
+      task.description = "Create jar artifact ${jarOutput}"
+      task.group = 'Publishing'
+      task.dependsOn variant.javaCompile
+      task.from variant.javaCompile.destinationDir
+      task.destinationDir = project.file("${project.buildDir}/outputs/jar")
+      task.archiveName = jarOutput
+
+      // register task
+      artifacts.add('archives', task);
     }
   }
 
