@@ -10,6 +10,10 @@ and OS resources leaks problems (which is still actual for Android 5.1.x).
 > (c) Douglas Adams (http://ebookfriendly.com/best-technology-quotes/)
 >
 
+# States
+
+[ ![Download](https://api.bintray.com/packages/kucherenko-alex/android/com.artfulbits%3Auniprefs/images/download.svg) ](https://bintray.com/kucherenko-alex/android/com.artfulbits%3Auniprefs/_latestVersion) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/OleksandrKucherenko/UnifiedPreferences?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) 
+
 # Benefits / Design Goals
 
 * Improve performance of the SharedPreferences on low-end devices
