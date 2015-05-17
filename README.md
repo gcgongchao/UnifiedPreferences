@@ -17,12 +17,20 @@ and OS resources leaks problems (which is still actual for Android 5.1.x).
 # Benefits / Design Goals
 
 * Improve performance of the SharedPreferences on low-end devices
-* Fix issue with threads (Each instance of SharedPreferences creates thread which is never destroyed)
-* Give ability to implement any custom de-/serialization of the data
-* Memory pool, which allows to use SharedPreferences as a "short life" instance
+* Fix issue with threads (Each instance of SharedPreferences creates thread which is never destroyed). 'Storage' can have only one 'save thread' for a process now.
+* Give ability to implement any custom de-/serialization of the data. Storage serialization can be replaced by any implementation you prefer: DB, JSON, etc.
 * Statistics collecting, allows to collect some runtime counters/metrics during class usage
 * Ability to store data in sqlite database
 * Improved ability to store ```long strings``` in SharedPreferences
+* Memory 'storage' pool. Creation of new instance of SharedPreferences is cheap.
+* 'Storage' pool based on weak references. Polite to memory usage.
+* Save of storage in background thread only.
+* Save threads change own priority based on thread queue size.
+* Actions Factory - allows to customize deeply modifications of the preferences.
+* Implemented CommitsListener - allows to monitor in memory commit transaction.
+* Custom names for save background threads. Easy to identify who created the thread and control it lifetime.
+* Save to Disk Thread Pools max size is polite to device resources. CPU Cores count influence on Max number of available threads in thread pool.
+* Merged save transactions, multiple Apply calls merged into one save to disk operation.
 
 # Real life
 
