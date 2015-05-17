@@ -39,6 +39,22 @@ So its heavily tested by real life. This code was developed mostly 1.5 year ago.
 
 _Sorry, no names here._
 
+# Gradle
+
+```groovy
+repositories {
+    maven {
+        url  "http://dl.bintray.com/kucherenko-alex/android"
+    }
+}
+
+dependencies {
+    // ALTERNATIVE:
+    //   compile(group: 'com.artfulbits', name: 'uniprefs', version: '1.0.1.8', ext: 'aar')
+    compile 'com.artfulbits:uniprefs:+@aar'
+}
+```
+
 # Usage
 
 For examples take look into Unit Tests. [Unit Tests - SharedPreferencesTests.java][1]
