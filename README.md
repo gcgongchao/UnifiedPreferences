@@ -12,7 +12,7 @@ and OS resources leaks problems (which is still actual for Android 5.1.x).
 
 # States
 
-[ ![Download](https://api.bintray.com/packages/kucherenko-alex/android/com.artfulbits%3Auniprefs/images/download.svg) ](https://bintray.com/kucherenko-alex/android/com.artfulbits%3Auniprefs/_latestVersion) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/OleksandrKucherenko/UnifiedPreferences?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) a[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-UnifiedPreferences-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/1831)
+[ ![Download](https://api.bintray.com/packages/kucherenko-alex/android/com.artfulbits%3Auniprefs/images/download.svg) ](https://bintray.com/kucherenko-alex/android/com.artfulbits%3Auniprefs/_latestVersion) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/OleksandrKucherenko/UnifiedPreferences?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-UnifiedPreferences-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/1831)
 
 Active development, started at: 2014-01-11
 
